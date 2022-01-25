@@ -1,0 +1,30 @@
+{
+  "name": "biewangle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "complie": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run complie",
+    "update": "npm run complie && git add . && release-it --ci"
+  },
+  "release-it": {
+    "github.release": true,
+    "git": {
+      "commitMessage": "aaden-cli: release v${version}",
+      "requireCleanWorkingDir": false
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.5.5",
+    "release-it": "^13.6.3"
+  }
+}
