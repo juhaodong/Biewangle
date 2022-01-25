@@ -85,7 +85,7 @@ export class SettingManagerFactory {
 
     }
 
-    config(configObj: any): any {
+    config<T>(configObj: T): T {
         return this.manage(Object.keys(configObj), configObj)
     }
 
