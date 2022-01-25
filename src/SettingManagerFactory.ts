@@ -85,10 +85,14 @@ export class SettingManagerFactory {
 
     }
 
-    manage(settingFields: SettingField<any>[], overrideDefaultObj: any) {
+    config(configObj: any) {
+        return this.manage(Object.keys(configObj), configObj)
+    }
+
+    manage(settingFields: SettingField<any>[], overrideDefaultObj?: any): any {
         const _this = this
         const getBestValue = function <T>(key: string, defaultValue: T): T {
-            return _this.getSetting(key) ?? overrideDefaultObj[key] ?? defaultValue
+            return _this.getSetting(key) ?? overrideDefaultObj?.[key] ?? defaultValue
         }
 
         const configObject = settingFields.reduce<any>((obj, f) => {

@@ -19,6 +19,7 @@ export declare class SettingManagerFactory {
     updateSetting(key: string, value: any, filterNeededKey?: boolean): void;
     getBestValue(key: string, defaultValue?: any): string | null;
     getSetting(key: string): any | null;
-    manage(settingFields: SettingField<any>[], overrideDefaultObj: any): any;
+    config(configObj: any): any;
+    manage(settingFields: SettingField<any>[], overrideDefaultObj?: any): any;
     neededKeys(): string[];
 }
