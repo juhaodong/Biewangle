@@ -15,7 +15,7 @@ export enum SettingType {
 }
 
 
-export class SettingManager {
+export class SettingManagerFactory {
 
     typeMap: Map<string, SettingType> = new Map()
     cacheMap: Map<string, { createTime: number, value: string }> = new Map()

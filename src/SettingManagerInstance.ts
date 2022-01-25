@@ -1,4 +1,4 @@
 import {LocalSettingStorage} from "./MutableSettingStorage";
-import {SettingManager} from "./SettingManager";
+import {SettingManagerFactory} from "./SettingManagerFactory";
 
-export const LocalSettingManager = new SettingManager(new LocalSettingStorage())
+export const LocalSettingManager = new SettingManagerFactory(new LocalSettingStorage())

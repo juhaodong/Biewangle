@@ -1,2 +1,2 @@
-import { SettingManager } from "./SettingManager";
-export declare const LocalSettingManager: SettingManager;
+import { SettingManagerFactory } from "./SettingManagerFactory";
+export declare const LocalSettingManager: SettingManagerFactory;

@@ -1,4 +1,4 @@
-import {SettingType} from "./SettingManager"
+import {SettingType} from "./SettingManagerFactory"
 
 export type SettingFieldOption<T> = {
     type: SettingTypeString,
