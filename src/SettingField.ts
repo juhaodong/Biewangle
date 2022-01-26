@@ -31,9 +31,25 @@ export function isString<T>(field: SettingField<T>): field is string {
     return typeof field == 'string'
 }
 
-export function parseToSettingFieldOption<T>(key: string, defaultValue?: T): SettingFieldOption<T> {
+export function parseToSettingFieldOption<T>(key: string, referenceObj?: any, defaultValue?: T,): SettingFieldOption<T> {
+    let type: SettingTypeString = 'String'
+    if (referenceObj && referenceObj[key]) {
+
+        const referenceValue = referenceObj[key]
+        if (Array.isArray(referenceValue)) {
+            type = 'Array'
+        } else if (typeof referenceValue == 'boolean') {
+            type = 'Boolean'
+        } else if (Number.isInteger(referenceValue)) {
+            type = 'Integer'
+        }
+
+
+    }
+
+
     return {
-        type: 'String',
+        type: type,
         key: key,
         defaultValue: defaultValue
     }
